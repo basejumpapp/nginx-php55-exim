@@ -4,7 +4,7 @@
 PUBLIC_HOSTNAME=$(curl -q http://169.254.169.254/latest/meta-data/public-hostname 2>/dev/null)
 
 # modify exim.conf
-SRC_FILE="/etc/mail/exim.conf"
+SRC_FILE="/etc/exim/exim.conf"
 TMP_FILE="/tmp/exim.conf"
 SED_LINE='s!@@HOSTNAME@@!'${PUBLIC_HOSTNAME}'!g'
 /bin/cp $SRC_FILE $TMP_FILE
