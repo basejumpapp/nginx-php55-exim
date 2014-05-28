@@ -11,8 +11,8 @@ RUN yum -y install exim
 # add custom exim.conf
 ADD exim.conf /etc/mail/exim.conf
 
-# restart exim service once
-RUN service exim restart
+# add custom exim startup script
+ADD exim-ec2-start.sh /usr/local/sbin/exim-ec2-start.sh
 
 # add new supervisd conf file with exim
 ADD supervisord.conf /etc/
