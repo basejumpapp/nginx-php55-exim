@@ -9,7 +9,7 @@ MAINTAINER Devon Weller <dweller@atlasworks.com>
 RUN yum -y install exim
 
 # add custom exim.conf
-ADD exim.conf /etc/mail/exim.conf
+ADD exim.conf /etc/exim/exim.conf
 
 # add custom exim startup script
 ADD exim-ec2-start.sh /usr/local/sbin/exim-ec2-start.sh
