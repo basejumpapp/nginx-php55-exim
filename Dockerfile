@@ -17,5 +17,7 @@ ADD exim-ec2-start.sh /usr/local/sbin/exim-ec2-start.sh
 # add new supervisd conf file with exim
 ADD supervisord.conf /etc/
 
+# create a log file for supervisord
+RUN mkdir /var/log/supervisord
 
 
