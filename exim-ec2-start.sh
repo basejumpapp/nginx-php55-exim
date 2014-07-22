@@ -21,5 +21,8 @@ SED_LINE='s!@@HOSTNAME@@!'${PUBLIC_HOSTNAME}'!g'
 /bin/cp $SRC_FILE $TMP_FILE
 cat $TMP_FILE | sed -e "$SED_LINE" > $SRC_FILE
 
+# set logs permissions
+chown -R exim. /var/log/exim
+
 # start exim
 /usr/sbin/exim -bdf -q1h
